@@ -1,4 +1,4 @@
-const mqtt = require('./back/mqtt/config/mqttconfig') // Parte MQTT
+const mqtt = require('./mqtt/config/mqttconfig') // Parte MQTT
 const sql = require('./sql/db') // Parte SQL. 
 
 let topic = "JE05/pub" // Tópico (o da BIn, dessa vez. )
