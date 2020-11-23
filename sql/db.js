@@ -1,8 +1,6 @@
 
 // isso vai me ganrantir que somente uma conexão global vai existir. 
 
-// const { con } = require("../back/config/db.config")
-
 // CONEXÃO
 async function connect() {
     if (global.connection && global.connection.state !== 'disconnected') // Se existir uma conexão globão, & o estado dela for (!==) diferente de desconectado. Então, se retorna a conxão já existente. 
@@ -75,7 +73,7 @@ async function insertointu(data) {
     console.log("Daods inserdos com sucesso")
 
 }
-
+// Atualizar
 async function update(id, set) {
     const conn = await connect();
     const sql = 'UPDATE BinDataMinutos SET nome=?, uf=? WHERE id=?'
@@ -120,13 +118,13 @@ async function update(id, set) {
     }
     return await conn.query(sql, values);
 }
-
-async function delet(id){
+//Delete
+async function deletes(id){
     const conn = await connect();
-    const sql ='DELETE FROM BinDataMinutos where id=?'
-    return  await conn.query(sql, [id])
+    const sql = 'DELETE FROM BinDataMinutos where id=?'
+    return await conn.query(sql, [id])
 }
 
 // Em caso de ambineteas mais completos, pode se usar o Pool. 
 
-module.exports = { connect, select, insertointu, update, delet }
+module.exports = { connect, select, insertointu, update, deletes }
