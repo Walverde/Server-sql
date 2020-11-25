@@ -1,5 +1,5 @@
 const db = require('../config/db.config')
-const bmodel = require('../controllers/')
+const bmodel = require("../controllers/")
 
 
 // CONEXÃO
@@ -29,6 +29,7 @@ async function select() {
 async function insert(data) {
     const db = await connect()
     const sql = 'INSERT INTO BinDataMinutos set?' // Nome da tabela. 
+    const values = bmodel
 }
 
 
