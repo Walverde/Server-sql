@@ -1,3 +1,6 @@
+const cor = require('../../basics/cores')
+const msn = require('../../basics/diags')
+
 const nuvem = {
     host: "ddbengenharia.com.br",
     user: 'ddbeng30_scd',
@@ -13,6 +16,9 @@ const local = {
 }
 
 const env = {}
+
+env.cor = cor
+env.msn = msn
 
 env.loc = local
 env.nuvi = nuvem
