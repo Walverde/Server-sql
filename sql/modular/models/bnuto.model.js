@@ -41,4 +41,5 @@ function model(data) {
     return values
 }
 
+
 module.exports = { model }

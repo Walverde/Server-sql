@@ -1,6 +1,5 @@
 const db = require('../config/db.config')
-const bmodel = require("../controllers/")
-
+const bmodel = require('..//models/bnuto.model')
 
 // CONEXÃO
 async function connect() {
@@ -26,12 +25,29 @@ async function select() {
 }
 
 // INSERT 
-async function insert(data) {
+async function insert(data) { // Data tem que esta parcedado em DATA, para poder funcionar. 
     const db = await connect()
     const sql = 'INSERT INTO BinDataMinutos set?' // Nome da tabela. 
-    const values = bmodel
+    const values = bmodel.model(data)
+    await db.query(sql, values)
+    console.log("Daods inserdos com sucesso")
+}
+
+// ATUALIZAÇÃO
+async function update(data, id, set) {
+    const conn = await connect();
+    const sql = 'UPDATE BinDataMinutos SET nome=?, uf=? WHERE id=?'
+    const values = bmodel.model(data)
+    return await conn.query(sql, values);
+}
+
+//DELETE
+async function deletes(id) {
+    const db = await connect();
+    const sql = 'DELETE FROM BinDataMinutos where id=?'
+    return await db.query(sql, [id])
 }
 
 
+module.exports = { connect, select, insert, update, deletes }
 
-module.exports = { connect, select, insertointu, update, deletes }

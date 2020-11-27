@@ -14,7 +14,7 @@ const local = {
 
 const env = {}
 
-env.local = local
-env.nuvem = nuvem
+env.loc = local
+env.nuvi = nuvem
 
-mudule.exports = env
+module.exports = env
