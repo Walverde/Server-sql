@@ -9,7 +9,7 @@ diags.diag('Executando Servidor SQL',cor.FgCyan,cor.FgYellow)
 
 let topic = "JE05/pub" // Tópico (o da BIn, dessa vez. )
 let cont = 0 // O Cont vai iniciar com ZERO. 
-let contpacks = 3 // quantidade de pacote que sera contato. 
+let contpacks =  60 // quantidade de pacote que sera contato. 
 let client = mqtt.connecting // setando conexão MQTT. 
 
 client.on('connect', () => { // Quando o evento "connect" ocorre, essa arrow function é acionada. 
