@@ -1,7 +1,9 @@
 const env = require('./env')
+const cor = require('../../basics/cores')
+const diag = require('../../basics/diags')
 
 const loc = env.loc
-const nuvi = env.nuv
+// const nuvi = env.nuv
 
 async function connect() {
     if (global.connection && global.connection.state !== 'disconnected') // Se existir uma conexão globão, & o estado dela for (!==) diferente de desconectado. Então, se retorna a conxão já existente. 
@@ -13,7 +15,7 @@ async function connect() {
         password: loc.password,
         database: loc.database
     })
-    console.log("db.js => executando. |  status: Conetado") // só vai executar depois conetar. Mode "ENCADEAR PROMOSES". 
+    diag.diag(`Executando => db.config.js | status: Conectado`, cor.FgYellow, cor.FgWhite) // só vai executar depois conetar. Mode "ENCADEAR PROMOSES". 
     global.connection = connection
     return connection
 }
